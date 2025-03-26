@@ -1,11 +1,11 @@
-import data from "./sample.json";
+"use client";
+
+import Container from "@/container";
 
 export default function Home() {
   return (
-    <div>
-      {data.data.map((item) => (
-        <div key={item.id}>{item.label}</div>
-      ))}
+    <div className="mx-auto my-10 flex max-w-md flex-col gap-4">
+      <Container />
     </div>
   );
 }
