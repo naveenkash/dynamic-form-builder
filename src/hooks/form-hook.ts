@@ -13,6 +13,8 @@ type FormData = {
 
 const useFormHook = () => {
   const formData = useRef<FormData>({});
+  const formErrors = useRef<any>({});
+  const [_, setRerender] = useState(0);
 
   const handleChange = useCallback((id: string, value: string) => {
     formData.current[id].value = value;
@@ -47,7 +49,9 @@ const useFormHook = () => {
     });
 
     if (Object.keys(errors).length > 0) {
+      formErrors.current = errors;
       console.log("Errors", errors);
+      setRerender((prev) => prev + 1);
       return;
     }
 
@@ -59,6 +63,7 @@ const useFormHook = () => {
     handleChange,
     registerField,
     submitForm,
+    formErrors: formErrors.current,
   };
 };
 

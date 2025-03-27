@@ -16,7 +16,6 @@
         "errorMessage": "Only alphanumeric characters are allowed."
       }
     },
-
     {
       "id": "email",
       "label": "Email",
@@ -36,7 +35,7 @@
       "label": "Last Name",
       "componentType": "textInput",
       "position": 3,
-      "gridSpan": 3,
+      "gridSpan": 6,
       "gridSpanStart": 1,
       "placeholder": "Enter your last name",
       "validation": {
@@ -44,6 +43,33 @@
         "pattern": "^[a-zA-Z0-9_]+$",
         "errorMessage": "Only alphanumeric characters are allowed."
       }
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "componentType": "radioGroup",
+      "position": 4,
+      "gridSpan": 6,
+      "gridSpanStart": 1,
+      "placeholder": "Enter your gender",
+      "validation": {
+        "required": true,
+        "errorMessage": "Please select your gender."
+      },
+      "options": [
+        {
+          "label": "Male",
+          "value": "male"
+        },
+        {
+          "label": "Female",
+          "value": "female"
+        },
+        {
+          "label": "Other",
+          "value": "other"
+        }
+      ]
     }
   ]
 }
